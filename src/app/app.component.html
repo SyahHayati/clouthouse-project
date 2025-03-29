@@ -1,9 +1,11 @@
 <style>
-  body {
-    font-family: 'Brandon-Reg';
-    font-size: 16px;
-    color: white;
-    overflow: hidden;
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
 }
 
 .container {
@@ -222,8 +224,8 @@
 </head>
 <div id="section-1">
     <!-- Video Background -->
-    <video id="myVideo" loop="" muted="" autoplay="" preload="" style="width:100%; height: auto;" playsinline>
-      <source src="assets/images/hero-video.mp4" type="video/mp4">
+    <video id="myVideo" loop muted autoplay playsinline>
+      <source src="https://clouthaus.com.my/assets/web/images/hero-video.mp4" type="video/mp4">
     </video>
 
   <header class="header">
@@ -269,7 +271,7 @@
       
       <!-- Text Column -->
       <div class="col-md-6 custom-column d-flex flex-column justify-content-center" [ngClass]="{'order-md-2': i % 2 === 0, 'order-md-1': i % 2 !== 0}">
-        <h5 class="card-title">{{ detail.name }}</h5>
+        <h5 class="card-title" style="color: black;">{{ detail.name }}</h5>
         <p class="card-text" [innerHTML]="detail.description"></p>
       </div>
       <!-- Image Column -->
