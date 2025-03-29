@@ -1,0 +1,401 @@
+<style>
+  body {
+    font-family: 'Brandon-Reg';
+    font-size: 16px;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Fullscreen Video Background */
+#section-1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Header */
+@media (max-width: 768px){}
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left img {
+    width: 399px; 
+  }
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Adjust spacing between elements */
+}
+
+.language a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: inline;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.language span {
+  color: white;
+}
+
+.dropdown-menu {
+  top: 100% !important; 
+  left: 0 !important;
+  transform: translate3d(-200px, 60px, 0px)!important;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 250px;
+}
+
+.dropdown-menu a {
+    font-size: 14px; 
+    color: #000; 
+    padding: 8px 12px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #434444; 
+    color: white;
+}
+
+/* Add padding between rows */
+.custom-row {
+  margin-bottom: 30px; /* Space between rows */
+}
+
+/* Add padding inside the columns */
+.custom-column {
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+
+@media (max-width: 768px) {
+    .luxury-section {
+        flex-direction: column;
+    }
+
+    .image-container, .text-container {
+        max-width: 100%;
+    }
+
+    .text-container {
+        padding: 20px;
+    }
+}
+
+/* Home Contact */
+
+#contact input,
+#contact select {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 5x;
+    padding-top: 0px;
+    margin-bottom: 15px;
+    color: grey ;
+    font-size: 14px;
+}
+#contact select {
+    padding-top: 8px
+}
+#contact input::placeholder {
+    color: grey ;
+}
+
+/* Custom Checkbox Styling */
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px solid #434444;
+    cursor: pointer;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: white;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #434444;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Footer */
+.footer {
+    background: #e8e4dc !important;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+.footer * {
+    color: black !important;
+    font-size: 10px;
+}
+
+
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="SeLItVT8cUeVO6TtcRg39N4Okinql59BtiLZEs1u">
+
+   <!-- Facebook Open Graph meta tags -->
+  <meta property="og:title" content="CloutHaus Residences" />
+  <meta property="og:description" content="THE ULTIMATE ADDRESS OF LUXURY" />
+  <meta property="og:image" content="https://clouthaus.com.my/assets/web/images/black-logo.png" />
+  
+  <meta property="og:type" content="website" />
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://clouthaus.com.my/assets/web/font-awesome/css/all.css" />
+  <link rel="stylesheet" href="https://clouthaus.com.my/assets/web/css/custom.css?v=1743183445" />
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+        
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css" integrity="sha512-nUqPe0+ak577sKSMThGcKJauRI7ENhKC2FQAOOmdyCYSrUh0GnwLsZNYqwilpMmplN+3nO3zso8CWUgu33BDag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css" integrity="sha512-vIrTyLijDDcUJrQGs1jduUCSVa3+A2DaWpVfNyj4lmXkqURVQJ8LL62nebC388QV3P4yFBSt/ViDX8LRW0U6uw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnail.min.css" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALiKfe8u1gjvWEEGEtoR6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-medium-zoom.min.css" integrity="sha512-ILbxmmqtYUE97Fmhl6ebHhHR6Q1G3GSC9dpbU64NITFIG8XGXqdYlmzGAb0I49htqaP8JNm2eLbEdBITqWbL5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+</head>
+<div id="section-1">
+    <!-- Video Background -->
+    <video id="myVideo" loop="" muted="" autoplay="" preload="" style="width:100%; height: auto;" playsinline>
+      <source src="assets/images/hero-video.mp4" type="video/mp4">
+    </video>
+
+  <header class="header">
+    <div class="container d-flex justify-content-between align-items-center">
+      
+      <!-- Left Side: Logo -->
+      <div class="header-left">
+        <a href="">
+          <img id="top-logo" src="assets/images/section-1-logo.png" alt="Logo Image">
+        </a>
+      </div>
+
+      <!-- Right Side: Language -->
+      <div class="header-right d-flex align-items-center">
+
+        <!-- Language Selector -->
+        <div class="language">
+          <a href="https://clouthaus.com.my/lang/en"><u>ENG</u></a>
+          <span class="px-2">|</span>
+          <a href="https://clouthaus.com.my/lang/cn">中文</a>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle" type="button" id="menuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="menuButton">
+            <li><a class="dropdown-item" href="#section-1">Home</a></li>
+            <li><a class="dropdown-item" href="#">Concept</a></li>
+            <li><a class="dropdown-item" href="#">Serviced Residences</a></li>
+            <li><a class="dropdown-item" href="#">Location</a></li>
+            <li><a class="dropdown-item" href="#contact">Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- Content -->
+<section class="section-2" *ngIf="data">
+  <div class="container">
+    <div class="row custom-row" *ngFor="let detail of data.projectDetails; let i = index">
+      
+      <!-- Text Column -->
+      <div class="col-md-6 custom-column d-flex flex-column justify-content-center" [ngClass]="{'order-md-2': i % 2 === 0, 'order-md-1': i % 2 !== 0}">
+        <h5 class="card-title">{{ detail.name }}</h5>
+        <p class="card-text" [innerHTML]="detail.description"></p>
+      </div>
+      <!-- Image Column -->
+      <div class="col-md-6 custom-column" [ngClass]="{'order-md-1': i % 2 === 0, 'order-md-2': i % 2 !== 0}">
+        <img [src]="detail.imageUrl" class="img-fluid" alt="Project Image">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Contact -->
+<section id="contact" data-step=8 class="section" data-aos="fade-up"
+    data-aos-anchor-placement="center-bottom"  data-aos-delay="500">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 standard-padding">
+                    <h2>SEEKING EXTRAVAGANCE?</h2>
+                    <p>Leave your mark of excellence, and expect to hear from us shortly.</p>
+                    <form action="https://clouthaus.com.my/contact-us" class="home-contact-form contact-form" method="post" role="form" name="contactForm">
+                        <input type="hidden" name="_token" value="SeLItVT8cUeVO6TtcRg39N4Okinql59BtiLZEs1u">                        <div class="row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="name" class="text-black cn-text">Name:</label>
+                                <input type="text" name="name" value="" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="email" class="text-black cn-text">Email: </label>
+                                <input type="email" name="email" value="" required placeholder="example@email.com">
+                            </div>
+                            
+                            <div class="form-group col-12 col-md-6">
+                                <label for="contact" class="text-black cn-text">Contact Number: </label>
+                                <input type="text" name="contact" value="" required placeholder="+60123456789">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                              <label for="method" class="text-black cn-text">How did you hear about us:</label>
+                                <select name="method" id="method" required>
+                                  <option selected hidden value="">Select here</option>
+                                  <option value="1" >Social Media</option>
+                                  <option value="2" >Family / Friends</option>
+                                  <option value="3" >Email / News</option>
+                                  <option value="4" >Events / Exhibitions / Roadshows</option>
+                                  <option value="5" >Newspaper / Banner / Bunting</option>
+                                  <option value="6" >Hoarding</option>
+                                  <option value="7" >Others</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-12">
+                                <label class="checkbox-container">
+                                    <span>I confirm that I have read and understand your <a href="https://taglobal.com.my/privacy-policy/" target="_blank">Privacy Policy</a> and hereby consent to the collection and processing of my personal data by or on behalf of
+                                TA Global Berhad and/or its related corporations, jointly controlled companies, associates, affiliates and partners in accordance therewith.</span>
+                                    <input name="consent" type="checkbox" value=true required>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="form-group-submit col-12">
+                              <button type="submit" class="submit-btn">Register Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<div class="footer bg-light text-dark mt-5" *ngIf="data">
+  <div class="container">
+    <div class="row py-3">
+      <!-- Logo & Social Media -->
+      <div class="col-lg-2 py-2">
+        <div class="mt-2 text-center">
+          <a href="https://taglobal.com.my/" target="_blank">
+            <img class="logo" style="width: 150px;" src="assets/images/bottom-logo.png" alt="Footer Logo">
+          </a>
+          <div class="social-icons my-3">
+            <a [href]="data.mapLink" target="_blank"><img class="icon" src="assets/images/icon-map.png" alt="Map"></a>
+            <a [href]="data.wazeLink" target="_blank"><img class="icon" src="assets/images/icon-waze.png" alt="Waze"></a>
+            <a [href]="data.facebook" target="_blank"><img class="icon" src="assets/images/icon-facebook.png" alt="Facebook"></a>
+            <a [href]="data.instagram" target="_blank"><img class="icon" src="assets/images/icon-insta.png" alt="Instagram"></a>
+            <a [href]="data.linkedin" target="_blank"><img class="icon" src="assets/images/icon-in.png" alt="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company Description -->
+      <div class="col-lg-6 py-2">
+        <p>
+          An innovator firmly focused in defying the usual mould of the property industry, TA Global works fearlessly in crafting distinctive living experiences for all through three principal segments: property development, property investment and property management.
+        </p>
+        <div class="mt-3">
+          <p class="small">
+            &copy; 2024 TA GLOBAL. All Rights Reserved. <br/>
+            <a class="text-dark" [href]="data.disclaimer">Disclaimer</a> | 
+            <a class="text-dark" [href]="data.pdpNotice">PDP Notice</a> | 
+            <a class="text-dark" [href]="data.terms">Terms & Conditions</a> | 
+            <a class="text-dark" [href]="data.apdl">APDL</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="col-lg-2 py-2">
+        <p>
+        <strong>CloutHaus Sales Gallery</strong>
+        </p>
+        <p>
+          {{ data.address1 }}<br/>
+          {{ data.address2 }}<br/>
+          {{ data.address3 }}
+        </p>
+      </div>
+
+      <!-- Phone & Email -->
+      <div class="col-lg-2 py-2">
+        <p>
+          <strong>Phone:</strong> <a class="text-dark" [href]="'tel:' + data.phoneLandline">+{{ data.countryCode }}-{{ data.phoneLandline }}</a> / 
+          <a class="text-dark" [href]="'tel:' + data.phoneNo">+{{ data.countryCode }}-{{ data.phoneNo }}</a><br/>
+          <strong>Email:</strong> <a class="text-dark" [href]="'mailto:' + data.email">{{ data.email }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
